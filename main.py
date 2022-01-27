@@ -13,9 +13,13 @@ with open(csvpath) as csvfile:
     header = next(csvreader)
 
     list_of_episodes = []
+    top_five = []
 
-
-    for rows in csvreader:
+    for rows in csvreader:   
         list_of_episodes.append(rows[1])
-        print(list_of_episodes)
+        if float(rows[3]) >= 8:
+            top_five.append(rows[0,1,3,7,9])
+            
+        
 
+print(top_five)
